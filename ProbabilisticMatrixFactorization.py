@@ -128,7 +128,7 @@ class PMF(object):
         pred = {}
         for inv in inv_lst:
             if pred.get(inv, None) is None:
-                pred[inv] = np.argsort(self.predict(inv))[-k:]  # numpy.argsort索引排序
+                pred[inv] = np.argsort(self.predict(inv-1))[-k:]  # numpy.argsort索引排序
 
         intersection_cnt = {}
         for i in range(test_vec.shape[0]):
